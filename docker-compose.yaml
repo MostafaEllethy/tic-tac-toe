@@ -1,0 +1,8 @@
+version: "3"
+services:
+  tic-tac-toe:
+    build: .
+    network_mode: bridge
+    environment:
+      - VIRTUAL_HOST=tic-tac-toe.mostafaellethy.com
+      - LETSENCRYPT_HOST=tic-tac-toe.mostafaellethy.com

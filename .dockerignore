@@ -1,0 +1,9 @@
+.git
+.github
+node_modules
+.dockerignore
+.gitattributes
+.gitignore
+Dockerfile
+performance.png
+*.md
