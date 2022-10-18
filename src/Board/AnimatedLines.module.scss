@@ -1,0 +1,30 @@
+.animate {
+  animation-name: draw-line;
+  animation-duration: 250ms;
+  animation-fill-mode: forwards;
+}
+
+.delay1 {
+  animation-delay: 500ms;
+}
+
+.delay2 {
+  animation-delay: 750ms;
+}
+
+.delay3 {
+  animation-delay: 1000ms;
+}
+
+.delay4 {
+  animation-delay: 1250ms;
+}
+
+@keyframes draw-line {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0%;
+  }
+}

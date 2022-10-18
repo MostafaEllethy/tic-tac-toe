@@ -1,15 +1,29 @@
-import styles from './Status.module.scss'
+import { memo } from "react";
 
 const Status = ({ winner, xIsNext, currentStep }) => {
-    let status = `Next player: ${xIsNext ? 'X' : 'O'}`
+  const Player = () => (
+    <strong
+      className={`text-4xl ${
+        winner ? "text-[gold]" : xIsNext ? "text-lime-400" : "text-red-400"
+      }`}
+    >
+      {winner ? winner : xIsNext ? "X" : "O"}
+    </strong>
+  );
 
-    if (winner) {
-        status = `Winner: ${winner}`
-    } else if (!winner && (currentStep === 9)) {
-        status = 'Draw'
-    }
+  let status = <>Next player {<Player />}</>;
 
-    return <div className={styles.status}>{status}</div>
-}
+  if (winner) {
+    status = <>🎉 Winner is {<Player />}</>;
+  } else if (!winner && currentStep === 9) {
+    status = <span className="text-cyan-500">Draw</span>;
+  }
 
-export default Status
+  return (
+    <p className="h-9 font-fuzzy flex items-center gap-2 text-2xl">
+      {status}
+    </p>
+  );
+};
+
+export default memo(Status);
